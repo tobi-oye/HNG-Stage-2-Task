@@ -7,33 +7,57 @@
     <title>HNG TASK TWO</title>
   </head>
   <style>
-    section {
+    body {
+      box-sizing: content-box;
+      width: 100%;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+    }
+    header {
+      width: 200px;
+    }
+    header > img {
+      width: 100%;
+    }
+
+    div.section {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      flex-direction: column;
+      padding: 30px;
     }
-    section > .image,
-    section > .text {
+    div.section > .image,
+    div.section > .text {
       margin: 10px;
     }
-    section > .image,
+    div.section > .image,
     img.profile-image {
       border-radius: 50%;
     }
-
-    section > .text {
-      width: 500px;
-      line-height: 4.1em;
+    img.profile-image {
+      width: 100%;
+    }
+    div.section > .image {
+      width: 200px;
+    }
+    div.section > .text {
+      line-height: normal;
+      text-align: center;
+      word-wrap: break-word;
     }
     h1 {
-      font-size: 100px;
+      font-size: 50px;
     }
     h2 {
-      font-size: 80px;
+      font-size: 30px;
     }
     p {
-      font-size: 30px;
+      font-size: 25px;
       color: gray;
       font-style: italic;
     }
@@ -65,7 +89,6 @@
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
-      width: 100%;
     }
 
     .button-9:disabled {
@@ -82,41 +105,68 @@
       color: white;
       text-decoration: none;
     }
-    header {
-      display: flex;
-      justify-content: center;
+
+    @media screen and (min-width: 900px) {
+      header {
+        width: 500px;
+      }
+      div.section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      div.section > .image {
+        width: 400px;
+      }
+      h1 {
+        font-size: 100px;
+      }
+      h2 {
+        font-size: 80px;
+      }
+      p {
+        font-size: 30px;
+        color: gray;
+        font-style: italic;
+      }
+      div.section > .text {
+        width: 500px;
+        line-height: 4.1em;
+        text-align: left;
+      }
     }
   </style>
   <body>
-    <header>
-      <img src="/assets/brand-logo.png" alt="HNG LOGO" class="hng-logo" />
-    </header>
-    <section>
-      <div class="image">
-        <img
-          src="./assets/download.png"
-          alt="my picture"
-          class="profile-image"
-        />
-      </div>
-      <div class="text">
-        <h1>Hi !</h1>
-        <h2>I am Tobi</h2>
-        <p>
-          a highly motivated Front-End Engineer with years of work experience
-          building & operating web applications to improve customer / user’s
-          experience.
-        </p>
+    <div class="container">
+      <header>
+        <img src="/assets/brand-logo.png" alt="HNG LOGO" class="hng-logo" />
+      </header>
+      <div class="section">
+        <div class="image">
+          <img
+            src="./assets/download.png"
+            alt="my picture"
+            class="profile-image"
+          />
+        </div>
+        <div class="text">
+          <h1>Hi !</h1>
+          <h2>I am Tobi</h2>
+          <p>
+            a highly motivated Front-End Engineer with years of work experience
+            building & operating web applications to improve customer / user’s
+            experience.
+          </p>
 
-        <button class="button-9" role="button">
-          <a
-            href="https://drive.google.com/file/d/1rtf6OXKMgPXiXosUceheUkMl1lxlSSiq/view?usp=sharing"
-            target="_blank"
-          >
-            Check out my Resume
-          </a>
-        </button>
+          <button class="button-9" role="button">
+            <a href="https://thorby.netlify.app/" target="_blank">
+              Check out my Resume
+            </a>
+          </button>
+        </div>
       </div>
-    </section>
+    </div>
   </body>
 </html>
